@@ -1,6 +1,3 @@
-[submodule "rune-cards-service"]
-	path = rune-cards-service
-	url = git@github.com:rune-catalog/rune-cards-service.git
 [submodule "rune-card-service-seed"]
 	path = rune-card-service-seed
 	url = git@github.com:rune-catalog/rune-card-service-seed.git
