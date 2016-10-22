@@ -1,0 +1,16 @@
+version: "2"
+services:
+  web:
+    build: ./rune-cards-service
+    ports:
+      - "3000:8080"
+    links:
+      - mongo
+  mongo:
+    image: mongo:3
+    ports:
+      - "27017:27017"
+  cards-service-seed:
+    build: ./rune-card-service-seed
+    links:
+      - mongo
