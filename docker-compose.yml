@@ -1,7 +1,7 @@
 version: "2"
 services:
   cards:
-    image: node:argon
+    image: node:boron
     ports:
       - "3000:8080"
     volumes:
@@ -9,19 +9,19 @@ services:
     working_dir: /app
     command: npm start
     links:
-      - cards-db
-  cards-db:
+      - card-db
+  card-db:
     image: mongo:3
   cards-seed:
-    image: node:argon
+    image: node:boron
     volumes:
       - ./rune-card-service-seed:/app
     working_dir: /app
     command: npm start
     links:
-      - cards-db
+      - card-db
   collections:
-    image: node:argon
+    image: node:boron
     ports:
       - "3001:8080"
     volumes:
@@ -29,6 +29,6 @@ services:
     working_dir: /app
     command: npm start
     links:
-      - collections-db
-  collesctions-db:
+      - collection-db
+  collection-db:
     image: mongo:3
