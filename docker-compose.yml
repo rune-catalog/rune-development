@@ -32,3 +32,11 @@ services:
       - collection-db
   collection-db:
     image: mongo:3
+  ui:
+    image: node:boron
+    ports:
+      - "8080:3000"
+    volumes:
+      - ./rune-ui:/app
+    working_dir: /app
+    command: npm start
