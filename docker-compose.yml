@@ -12,6 +12,8 @@ services:
       - card-db
   card-db:
     image: mongo:3
+    ports:
+      - "27018:27017"
   cards-seed:
     image: node:boron
     volumes:
@@ -32,6 +34,8 @@ services:
       - collection-db
   collection-db:
     image: mongo:3
+    ports:
+      - "27019:27017"
   ui:
     image: node:boron
     ports:
