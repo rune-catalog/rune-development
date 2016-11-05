@@ -10,3 +10,6 @@
 [submodule "rune-ui"]
 	path = rune-ui
 	url = git@github.com:rune-catalog/rune-ui.git
+[submodule "user-service"]
+	path = user-service
+	url = git@github.com:rune-catalog/user-service.git
