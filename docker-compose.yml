@@ -36,6 +36,20 @@ services:
     image: mongo:3
     ports:
       - "27019:27017"
+  users:
+    image: node:boron
+    ports:
+      - "3002:8080"
+    volumes:
+      - ./user-service:/app
+    working_dir: /app
+    command: npm start
+    links:
+      - user-db
+  user-db:
+    image: mongo:3
+    ports:
+      - "27020:27017"
   ui:
     image: node:boron
     ports:
